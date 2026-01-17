@@ -16,33 +16,11 @@
             line-height: 1.6;
             color: var(--text-dark);
             background-color: #f9fafb;
-            position: relative; /* Необходимо для позиционирования кнопки */
         }
-        
-        /* Стили для новой кнопки в углу */
-        .top-left-btn {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background-color: var(--primary-blue);
-            color: white;
-            padding: 8px 16px;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: bold;
-            font-size: 14px;
-            border: none; /* Без обводки */
-            z-index: 1000;
-            transition: opacity 0.2s;
-        }
-        .top-left-btn:hover {
-            opacity: 0.9;
-        }
-
         header {
             background-color: var(--primary-blue);
             color: white;
-            padding: 60px 20px 40px 20px; /* Увеличили верхний отступ, чтобы кнопка не перекрывала текст */
+            padding: 40px 20px;
             text-align: center;
         }
         .container {
@@ -58,6 +36,36 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
         h2 { color: var(--primary-blue); border-bottom: 2px solid var(--light-blue); padding-bottom: 10px; }
+        
+        /* Контейнер для кнопок в ряд */
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary-blue);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: background 0.2s, transform 0.1s;
+            text-align: center;
+            min-width: 200px;
+        }
+        .btn:hover {
+            background: #002673;
+            transform: translateY(-2px);
+        }
+        .btn:active {
+            transform: translateY(0);
+        }
+
         .tariff-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -73,24 +81,13 @@
         }
         .tariff-card:hover { transform: translateY(-5px); border-color: var(--primary-blue); }
         .price { font-size: 24px; font-weight: bold; color: var(--primary-blue); }
-        .btn {
-            display: inline-block;
-            background: var(--primary-blue);
-            color: white;
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 25px;
-            margin-top: 20px;
-            font-weight: bold;
-        }
+        
         footer { text-align: center; padding: 40px; font-size: 0.9em; color: #6b7280; }
         ul { list-style: none; padding: 0; }
         li::before { content: "🔹 "; }
     </style>
 </head>
 <body>
-
-<a href="setup.html" class="top-left-btn">Настроить Happ</a>
 
 <header>
     <h1>WindowinEurope</h1>
@@ -106,8 +103,10 @@
             <li>Лимит на 6 активных устройств для стабильной скорости работы.</li>
             <li>Круглосуточную техническую поддержку 24/7.</li>
         </ul>
-        <div style="text-align: center;">
+        
+        <div class="btn-group">
             <a href="https://t.me/WindowinEurope_bot" class="btn">Перейти в Telegram бот</a>
+            <a href="setup.html" class="btn">Инструкции и настройка</a>
         </div>
     </section>
 
