@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Настройка V2Box (iOS) — WindowinEurope</title>
+    <style>
+        :root { --primary-blue: #003399; --text-dark: #1f2937; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f9fafb; }
+        .navbar { background-color: var(--primary-blue); padding: 10px 20px; display: flex; justify-content: center; gap: 20px; position: sticky; top: 0; z-index: 1000; }
+        .navbar a { color: white; text-decoration: none; font-weight: bold; font-size: 14px; padding: 5px 10px; border-radius: 4px; }
+        
+        .setup-container { max-width: 600px; margin: 40px auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        h1 { color: var(--primary-blue); text-align: center; }
+        .step { margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #eef2ff; }
+        code { background: #f1f1f1; padding: 2px 5px; border-radius: 4px; color: #d63384; }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="index.html">Главная</a>
+    <a href="setup-happ.html">Настройка Happ</a>
+    <a href="setup-v2box.html" style="background: rgba(255,255,255,0.2);">Настройка V2Box</a>
+</nav>
+
+<div class="setup-container">
+    <h1>Инструкция для V2Box (iOS)</h1>
+    <div class="step">
+        <p>1. Установите <strong>V2Box</strong> из App Store.</p>
+    </div>
+    <div class="step">
+        <p>2. Скопируйте ваш VLESS-ключ из нашего Telegram-бота.</p>
+    </div>
+    <div class="step">
+        <p>3. В приложении перейдите в <strong>Config</strong> -> <strong>Routing Settings</strong> -> <strong>Add Rule</strong>.</p>
+        <p>Настройте правило для обхода РФ:</p>
+        <ul>
+            <li>Outbound: <code>direct</code></li>
+            <li>Domain: <code>geosite:ru</code></li>
+            <li>IP: <code>geoip:ru</code></li>
+        </ul>
+        <p>Нажмите <strong>Save</strong>.</p>
+    </div>
+</div>
+
+</body>
+</html>
