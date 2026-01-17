@@ -16,11 +16,33 @@
             line-height: 1.6;
             color: var(--text-dark);
             background-color: #f9fafb;
+            position: relative; /* Необходимо для позиционирования кнопки */
         }
+        
+        /* Стили для новой кнопки в углу */
+        .top-left-btn {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 14px;
+            border: none; /* Без обводки */
+            z-index: 1000;
+            transition: opacity 0.2s;
+        }
+        .top-left-btn:hover {
+            opacity: 0.9;
+        }
+
         header {
             background-color: var(--primary-blue);
             color: white;
-            padding: 40px 20px;
+            padding: 60px 20px 40px 20px; /* Увеличили верхний отступ, чтобы кнопка не перекрывала текст */
             text-align: center;
         }
         .container {
@@ -68,6 +90,8 @@
 </head>
 <body>
 
+<a href="setup.html" class="top-left-btn">Настроить Happ</a>
+
 <header>
     <h1>WindowinEurope</h1>
     <p>Профессиональная аренда облачных мощностей в Европе</p>
@@ -76,7 +100,7 @@
 <div class="container">
     <section>
         <h2>О сервисе</h2>
-        <p>WindowinEurope — это современный сервис аренды удаленных серверных мощностей. Мы предоставляем доступ к высокоскоростной облачной инфраструктуре в Европе для IT-специалистов, разработчиков и системных администраторов.</p>
+        <p>WindowinEurope — это современный сервис аренды удаленных серверных мощностей. Мы предоставляем доступ к высокоскоростной облачной инфраструктуре в Европе.</p>
         <ul>
             <li>Доступ к защищенному сетевому узлу.</li>
             <li>Лимит на 6 активных устройств для стабильной скорости работы.</li>
@@ -119,9 +143,6 @@
     <p>&copy; 2026 WindowinEurope. Все права защищены.<br>
     Использование сервиса подразумевает согласие с правилами аренды оборудования.</p>
 </footer>
-    <div style="text-align: center; margin-top: 10px;">
-    <a href="setup.html" class="btn" style="background: #eef2ff; color: #003399; border: 2px solid #003399;">Настроить подключение</a>
-</div>
 
 </body>
 </html>
