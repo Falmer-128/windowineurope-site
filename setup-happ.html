@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Настройка Happ — WindowinEurope</title>
+    <style>
+        /* Используем те же стили Navbar, что и на главной для бесшовности */
+        :root { --primary-blue: #003399; --text-dark: #1f2937; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f9fafb; }
+        .navbar { background-color: var(--primary-blue); padding: 10px 20px; display: flex; justify-content: center; gap: 20px; position: sticky; top: 0; z-index: 1000; }
+        .navbar a { color: white; text-decoration: none; font-weight: bold; font-size: 14px; padding: 5px 10px; border-radius: 4px; }
+        
+        .setup-container { max-width: 600px; margin: 40px auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        h1 { color: var(--primary-blue); text-align: center; }
+        .step { margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #eef2ff; }
+        .btn-happ { display: block; background: #007bff; color: white; padding: 15px; text-decoration: none; border-radius: 10px; text-align: center; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="index.html">Главная</a>
+    <a href="setup-happ.html" style="background: rgba(255,255,255,0.2);">Настройка Happ</a>
+    <a href="setup-v2box.html">Настройка V2Box</a>
+</nav>
+
+<div class="setup-container">
+    <h1>Инструкция для Happ</h1>
+    <div class="step">
+        <p>1. Установите приложение Happ для Windows, Android или macOS.</p>
+    </div>
+    <div class="step">
+        <p>2. Нажмите кнопку ниже для импорта умной маршрутизации.</p>
+        <a href="happ://routing/add/eyJibG9ja2lwIjpbXSw..." class="btn-happ">ИМПОРТИРОВАТЬ В HAPP</a>
+    </div>
+    <div class="step">
+        <p>3. Скопируйте ваш VLESS-ключ из бота и добавьте его в приложение.</p>
+    </div>
+</div>
+
+</body>
+</html>
