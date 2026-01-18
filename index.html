@@ -3,195 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WindowinEurope — Аренда серверных мощностей</title>
+    <title>WindowinEurope — Аренда серверов в Европе</title>
     <style>
         :root {
-            --primary-blue: #003399;
-            --light-blue: #eef2ff;
-            --text-dark: #1f2937;
-            --nav-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            --main-blue: #004ecc;
+            --bg-light: #f4f7fa;
+            --text-gray: #4b5563;
         }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, sans-serif;
             margin: 0;
+            background-color: var(--bg-light);
+            color: #1f2937;
             line-height: 1.6;
-            color: var(--text-dark);
-            background-color: #f9fafb;
         }
-
-        /* Красивая навигация */
-        .navbar {
-            background-color: var(--primary-blue);
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: var(--nav-shadow);
-            height: 60px;
-        }
-        .navbar a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 15px;
-            transition: all 0.3s ease;
-            position: relative;
-            padding: 18px 15px;
-            display: inline-block;
-        }
-        /* Анимированное подчеркивание при наведении */
-        .navbar a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 3px;
-            bottom: 0;
-            left: 0;
-            background-color: #ffffff;
-            transition: width 0.3s ease;
-        }
-        .navbar a:hover, .navbar a.active {
-            color: #ffffff;
-            background: rgba(255, 255, 255, 0.1);
-        }
-        .navbar a:hover::after, .navbar a.active::after {
-            width: 100%;
-        }
-
         header {
-            background-color: var(--primary-blue);
+            background: linear-gradient(135deg, #003399 0%, #004ecc 100%);
             color: white;
             padding: 60px 20px;
             text-align: center;
         }
         .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
+            max-width: 1000px;
+            margin: -40px auto 40px;
+            padding: 0 20px;
         }
         section {
             background: white;
-            padding: 30px;
-            margin-bottom: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
         }
-        h2 { color: var(--primary-blue); border-bottom: 2px solid var(--light-blue); padding-bottom: 10px; }
+        h1 { margin: 0; font-size: 2.5rem; }
+        h2 { 
+            color: var(--main-blue); 
+            border-bottom: 2px solid #e5e7eb; 
+            padding-bottom: 15px; 
+            margin-top: 0;
+        }
         
-        .btn-group {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
+        /* Сетка тарифов */
+        .tariffs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
             margin-top: 30px;
         }
-
-        .btn {
-            display: inline-block;
-            background: var(--primary-blue);
-            color: white;
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
-            transition: all 0.2s ease;
-            text-align: center;
-            min-width: 200px;
-        }
-        .btn:hover {
-            background: #002673;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .tariff-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
         .tariff-card {
-            border: 2px solid var(--light-blue);
-            padding: 20px;
-            border-radius: 10px;
+            border: 2px solid #f3f4f6;
+            padding: 30px;
+            border-radius: 12px;
             text-align: center;
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease;
         }
-        .tariff-card:hover { 
-            transform: translateY(-5px); 
-            border-color: var(--primary-blue);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+        .tariff-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--main-blue);
         }
-        .price { font-size: 24px; font-weight: bold; color: var(--primary-blue); }
-        
-        footer { text-align: center; padding: 40px; font-size: 0.9em; color: #6b7280; }
-        ul { list-style: none; padding: 0; }
-        li::before { content: "🔹 "; }
+        .price {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--main-blue);
+            margin: 15px 0;
+        }
+
+        /* Кнопка */
+        .cta-button {
+            display: inline-block;
+            background: var(--main-blue);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(0, 78, 204, 0.3);
+        }
+
+        /* Инструкция */
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        .step-num {
+            background: var(--main-blue);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-gray);
+        }
+        .hidden-link {
+            font-size: 12px;
+            color: #9ca3af;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+        }
+        .hidden-link:hover { color: var(--text-gray); }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            section { padding: 25px; }
+        }
     </style>
 </head>
 <body>
 
-<nav class="navbar">
-    <a href="index.html" class="active">Главная</a>
-    <a href="setup-happ.html">Настройка Happ</a>
-</nav>
-    
 <header>
     <h1>WindowinEurope</h1>
-    <p>Профессиональная аренда облачных мощностей в Европе</p>
+    <p>Надежные серверные решения для стабильного доступа</p>
 </header>
 
 <div class="container">
-    <section>
-        <h2>О сервисе</h2>
-        <p>WindowinEurope — это современный сервис аренды удаленных серверных мощностей. Мы предоставляем доступ к высокоскоростной облачной инфраструктуре в Европе.</p>
-        <ul>
-            <li>Доступ к защищенному сетевому узлу.</li>
-            <li>Лимит на 6 активных устройств для стабильной скорости работы.</li>
-            <li>Круглосуточную техническую поддержку 24/7.</li>
-        </ul>
-        
-        <div class="btn-group">
-            <a href="https://t.me/WindowinEurope_bot" class="btn">Перейти в Telegram бот</a>
-            <a href="setup-happ.html" class="btn">Инструкции и настройка</a>
-        </div>
-    </section>
-
-    <section>
+    <section id="pricing">
         <h2>Тарифные планы</h2>
-        <div class="tariff-grid">
+        <div class="tariffs">
             <div class="tariff-card">
                 <h3>30 дней</h3>
-                <p class="price">120 руб.</p>
+                <div class="price">120 ₽</div>
                 <p>Базовый доступ</p>
             </div>
             <div class="tariff-card">
                 <h3>90 дней</h3>
-                <p class="price">324 руб.</p>
-                <p>Скидка 10%</p>
+                <div class="price">324 ₽</div>
+                <p>Выгодный период</p>
             </div>
             <div class="tariff-card">
                 <h3>180 дней</h3>
-                <p class="price">576 руб.</p>
-                <p>Скидка 20%</p>
+                <div class="price">576 ₽</div>
+                <p>Максимальная экономия</p>
             </div>
+        </div>
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="https://t.me/WindowinEurope_bot" class="cta-button">Оформить подписку в Telegram</a>
+        </div>
+    </section>
+
+    <section id="setup">
+        <h2>Инструкция по настройке</h2>
+        <div class="step">
+            <div class="step-num">1</div>
+            <div>Оплатите выбранный тариф в нашем Telegram-боте.</div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div>Скопируйте полученный ключ доступа.</div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div>Скачайте приложение <b>v2rayNG</b> (Android) или <b>v2rayN</b> (Windows) и импортируйте ключ.</div>
         </div>
     </section>
 
     <section id="contacts">
-        <h2>Контакты</h2>
-        <p>Служба поддержки: <a href="https://t.me/WindowinEurope_support">@WindowinEurope_support</a></p>
-        <p>Email: windowineuropesup@gmail.com</p>
+        <h2>Контакты и поддержка</h2>
+        <p>Мы работаем круглосуточно, чтобы обеспечить вашу стабильность.</p>
+        <p><b>Telegram Support:</b> <a href="https://t.me/WindowinEurope_support">@WindowinEurope_support</a></p>
+        <p><b>Email:</b> support@ll.info.gf</p>
     </section>
 </div>
 
 <footer>
-    <p>&copy; 2026 WindowinEurope. Все права защищены.<br>
-    Использование сервиса подразумевает согласие с правилами аренды оборудования.</p>
+    <p>&copy; 2026 WindowinEurope. Все права защищены.</p>
+    <a href="rules.html" class="hidden-link">Пользовательское соглашение и правила возврата</a>
 </footer>
 
 </body>
